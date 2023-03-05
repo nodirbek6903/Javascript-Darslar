@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  background: crimson;
+  width: 100%;
+  align-items: center;
+  padding: 15px 100px;
+}
+header .Nodirbek {
+  text-decoration: none;
+  font-size: 30px;
+}
+header .navigation {
+  position: relative;
+}
+header .navigation a {
+  margin-left: 30px;
+  text-decoration: none;
+  font-size: 30px;
+  text-transform: uppercase;
+}
