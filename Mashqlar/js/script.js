@@ -29,7 +29,37 @@
 // const newArr = arr.reduce((sum, current) => sum + current, 10);
 // console.log(newArr);
 
-const arr = ["bmw", "audi", "rollce royce", "malibu"];
-const res = arr.reduce((sum, current) => `${sum}, ${current}`);
+// const arr = ["bmw", "audi", "rollce royce", "malibu"];
+// const res = arr.reduce((sum, current) => `${sum}, ${current}`);
 
-console.log(res);
+// console.log(res);
+
+const email = document.querySelector(".email"),
+  password = document.querySelector(".password"),
+  formSubmit = document.querySelector("form"),
+  doc = document.querySelector(".doc");
+
+//set Item
+
+// localStorage.setItem("name", "Nodirbek");
+
+//get Item
+// const name = localStorage.getItem("name");
+// console.log(name);
+
+formSubmit.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const user = {
+    email: email.value,
+    password: password.value,
+  };
+
+  e.target.reset();
+  localStorage.setItem("user", JSON.stringify(user));
+});
+const user = JSON.parse(localStorage.getItem("user"));
+
+console.log(user);
+doc.textContent = `${user.email}`;
+// console.log(doc);
