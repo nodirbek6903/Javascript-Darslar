@@ -37,6 +37,7 @@
 const email = document.querySelector(".email"),
   password = document.querySelector(".password"),
   formSubmit = document.querySelector("form"),
+  name = document.querySelector(".name"),
   doc = document.querySelector(".doc");
 
 //set Item
@@ -47,19 +48,41 @@ const email = document.querySelector(".email"),
 // const name = localStorage.getItem("name");
 // console.log(name);
 
+// formSubmit.addEventListener("submit", (e) => {
+//   e.preventDefault();
+
 formSubmit.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const user = {
+  const foydalanuvchi = {
+    name: name.value,
     email: email.value,
     password: password.value,
   };
-
   e.target.reset();
-  localStorage.setItem("user", JSON.stringify(user));
+  const res = localStorage.setItem(
+    "foydalanuvchi",
+    JSON.stringify(foydalanuvchi)
+  );
+  console.log(foydalanuvchi.email);
 });
-const user = JSON.parse(localStorage.getItem("user"));
 
-console.log(user);
-doc.textContent = `${user.email}`;
-// console.log(doc);
+const foydalanuvchi = JSON.parse(localStorage.getItem("foydalanuvchi"));
+doc.textContent = `${foydalanuvchi.name}`;
+//   const user = {
+//     email: email.value,
+//     password: password.value,
+//   };
+
+//   e.target.reset();
+//   localStorage.setItem("user", JSON.stringify(user));
+// });
+// const user = JSON.parse(localStorage.getItem("user"));
+
+// console.log(user);
+// doc.textContent = `${user.email}`;
+// // console.log(doc);
+
+// localStorage.setItem("ismlar", "Nodirbek");
+// const names = localStorage.getItem("ismlar");
+// console.log(names);
