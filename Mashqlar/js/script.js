@@ -11,6 +11,13 @@ const name = document.querySelector(".name"),
 
 // const ism = name.value;
 
+// \d - bu faqat sonlarni qidiradi (number)
+// \w - bu faqat harflarni qidiradi (word)
+// \s - bu faqat bo'sh joylarni qidiradi (space)
+// \D - not a number(number)
+// \W - not a word (word)
+// \S - not a space (space)
+
 const regex = /dir/gi;
 
 form.addEventListener("submit", (e) => {
@@ -20,4 +27,5 @@ form.addEventListener("submit", (e) => {
   } else {
     console.log("Siz admin emassiz");
   }
+  form.reset();
 });
